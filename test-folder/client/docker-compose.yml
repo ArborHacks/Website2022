@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  ah-web:
+    container_name: ah-web
+    image: ah-web:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    ports:
+      - '3001:3001'
+    command: 'npm start'
